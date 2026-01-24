@@ -1,4 +1,4 @@
-﻿﻿:root {
+﻿:root {
     --primary-hue: 260;
     --secondary-hue: 320;
     --accent-hue: 200;
@@ -948,4 +948,4 @@ section {
     50% { opacity: 0.7; }
 }
 
-/* Force update */
+/* Force updated */
