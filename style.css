@@ -250,19 +250,9 @@ body {
 }
 
 @keyframes float {
-
-    0%,
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-
-    33% {
-        transform: translate(30px, -30px) scale(1.1);
-    }
-
-    66% {
-        transform: translate(-20px, 20px) scale(0.9);
-    }
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
 }
 
 .hero-content {
@@ -309,13 +299,8 @@ body {
 }
 
 @keyframes expandWidth {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
+    from { width: 0; }
+    to { width: 100%; }
 }
 
 .hero-title {
@@ -337,15 +322,8 @@ body {
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-cta {
@@ -409,13 +387,8 @@ body {
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .mouse {
@@ -439,15 +412,8 @@ body {
 }
 
 @keyframes scroll {
-    0% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateX(-50%) translateY(16px);
-    }
+    0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(16px); }
 }
 
 section {
@@ -576,35 +542,19 @@ section {
     left: -150%;
     width: 60%;
     height: 100%;
-    background: linear-gradient(to right,
-            transparent,
-            rgba(255, 255, 255, 0.4),
-            transparent);
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
     transform: skewX(-25deg);
     animation: sweep 4s infinite ease-in-out;
 }
 
 @keyframes sweep {
-    0% {
-        left: -150%;
-    }
-
-    20%,
-    100% {
-        left: 200%;
-    }
+    0% { left: -150%; }
+    20%, 100% { left: 200%; }
 }
 
 @keyframes subtleGlow {
-
-    0%,
-    100% {
-        box-shadow: 0 0 20px rgba(138, 92, 246, 0.2);
-    }
-
-    50% {
-        box-shadow: 0 0 40px rgba(138, 92, 246, 0.4);
-    }
+    0%, 100% { box-shadow: 0 0 20px rgba(138, 92, 246, 0.2); }
+    50% { box-shadow: 0 0 40px rgba(138, 92, 246, 0.4); }
 }
 
 .skills-grid {
@@ -677,47 +627,6 @@ section {
     background: var(--bg-secondary);
 }
 
-/* Find the .project-image section and replace it with this: */
-
-.project-image {
-    width: 100%;
-    height: 220px; /* Fixed height for consistency */
-    position: relative;
-    overflow: hidden;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* This is the NEW class for your SEO-friendly images */
-.project-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures image covers area without stretching */
-    transition: transform 0.6s ease;
-    display: block;
-}
-
-/* Keep the zoom effect on hover */
-.project-card:hover .project-img {
-    transform: scale(1.1);
-}
-
-/* Ensure overlay stays on top */
-.project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(10, 10, 15, 0.85);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    backdrop-filter: blur(4px);
-    z-index: 2; /* Sits on top of the image */
-}
-
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -739,6 +648,39 @@ section {
     border-color: var(--primary-color);
 }
 
+.project-image {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+    position: relative;
+    overflow: hidden;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    display: block;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.1);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 10, 15, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+}
 
 .project-card:hover .project-overlay {
     opacity: 1;
@@ -790,7 +732,7 @@ section {
     margin-bottom: var(--spacing-md);
 }
 
-.contact-info>p {
+.contact-info > p {
     color: var(--text-secondary);
     margin-bottom: var(--spacing-xl);
     line-height: 1.8;
@@ -926,6 +868,9 @@ section {
 .footer-content {
     text-align: center;
     color: var(--text-tertiary);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
 }
 
 .footer-content p {
@@ -933,16 +878,13 @@ section {
 }
 
 @media (max-width: 968px) {
-
     .about-content,
     .contact-content {
         grid-template-columns: 1fr;
     }
-
     .stats {
         grid-template-columns: repeat(3, 1fr);
     }
-
     .nav-menu {
         gap: var(--spacing-md);
     }
@@ -952,19 +894,15 @@ section {
     :root {
         --section-padding: 60px 0;
     }
-
     .nav-menu {
         display: none;
     }
-
     .hero-cta {
         flex-direction: column;
     }
-
     .stats {
         grid-template-columns: 1fr;
     }
-
     .skills-grid,
     .projects-grid {
         grid-template-columns: 1fr;
@@ -975,11 +913,9 @@ section {
     .hero-greeting {
         font-size: 1rem;
     }
-
     .hero-description {
         font-size: 1rem;
     }
-
     .btn {
         padding: 12px 24px;
         font-size: 0.9rem;
@@ -999,31 +935,15 @@ section {
 }
 
 @keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+    to { transform: rotate(360deg); }
 }
 
 @keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
-
 
 @keyframes pulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.7; }
-}
-
-/* Update existing footer spacing */
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
 }
